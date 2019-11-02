@@ -1,3 +1,5 @@
+[<img src="https://img.shields.io/badge/react--number--variants-1.0.0-brightgreen">](https://www.npmjs.com/package/react-number-variants)
+
 # react-number-variants
 A React number component with variants for numbers, currencies, and percentages. This library combines many key features needed for a robust number input in a seamless, configurable way, so you don't have to spend days creating your own component.
 
