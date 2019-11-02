@@ -17,6 +17,9 @@ https://react-number-variants.netlify.com/
 ## GitHub
 https://github.com/MachineLlama/react-number-variants
 
+## NPM
+https://www.npmjs.com/package/react-number-variants
+
 ## Usage
 
     npm install react-number-variants --save
