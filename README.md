@@ -35,7 +35,10 @@ Simple example:
       }
     />
     
-## All Props
+## License
+Absolutely none; feel free to clone and use any part of this code anywhere you want
+
+## All Props (all optional)
 **id:**  ID of the entire Number component container
 
 &nbsp; &nbsp; &nbsp; &nbsp;type: string
