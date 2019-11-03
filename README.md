@@ -1,5 +1,5 @@
 
-[<img src="https://img.shields.io/badge/react--number--variants-1.0.0-brightgreen">](https://www.npmjs.com/package/react-number-variants)
+[<img src="https://img.shields.io/npm/v/react-number-variants">](https://www.npmjs.com/package/react-number-variants)
 
 # react-number-variants
 
