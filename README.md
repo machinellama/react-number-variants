@@ -1,8 +1,4 @@
 
-[<img src="https://img.shields.io/npm/v/react-number-variants">](https://www.npmjs.com/package/react-number-variants)
-
-# react-number-variants
-
 A multi-purpose React number component with variants for numbers, currencies, and percentages. This library combines many key features in a simple, configurable way
 
 Features include:
@@ -22,6 +18,7 @@ https://react-number-variants.netlify.com/
 https://github.com/MachineLlama/react-number-variants
 
 ## NPM
+[<img src="https://img.shields.io/npm/v/react-number-variants">](https://www.npmjs.com/package/react-number-variants)<br/>
 https://www.npmjs.com/package/react-number-variants
 
 ## Usage
