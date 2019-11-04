@@ -4,7 +4,7 @@ A multi-purpose React number component with variants for numbers, currencies, an
 Features include:
 
 - format number on-blur; unformat on-focus
-- format based locale and currency
+- format based on locale and currency
 - min and max
 - variable number of decimals places
 - show error messages (above or below input)
