@@ -1,5 +1,5 @@
 
-A multi-purpose React number component with variants for numbers, currencies, and percentages. This library combines many key features in a simple, configurable way
+A multi-purpose React number component with variants for numbers, currencies, and percentages
 
 Features include:
 
