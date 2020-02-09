@@ -1,5 +1,4 @@
-import isEmpty from 'lodash/isEmpty';
-import getLocale from 'get-user-locale';
+import getLocale from './getLocale';
 
 /*
   Function to unformat a number based on locale (got from stackoverflow)
@@ -11,7 +10,7 @@ import getLocale from 'get-user-locale';
 */
 export default function unformatLocaleNumber(stringNumber, locale) {
   let newLocale = locale;
-  if (isEmpty(locale)) {
+  if (!locale || locale == null || locale === undefined) {
     newLocale = getLocale();
   }
   newLocale = newLocale.replace('_', '-'); // just in case

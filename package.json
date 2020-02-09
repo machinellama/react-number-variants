@@ -1,6 +1,6 @@
 {
   "name": "react-number-variants",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "",
   "main": "build/index.js",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "https://github.com/MachineLlama/react-number-variants"
   },
   "peerDependencies": {
-    "react": "^16.4.0"
+    "react": "^16.x",
+    "react-dom": "^16.x"
   },
   "scripts": {
     "start": "webpack --watch",
@@ -25,23 +26,15 @@
     "format",
     "variant"
   ],
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "webpack": "^4.12.0",
-    "get-user-locale": "^1.2.0",
-    "locale-currency": "0.0.2",
-    "lodash": "^4.17.15",
-    "numeral": "^2.0.6",
-    "prop-types": "^15.7.2"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
+    "webpack": "^4.12.0",
     "webpack-cli": "^3.0.4"
   }
 }

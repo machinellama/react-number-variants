@@ -1,12 +1,11 @@
-import isNumber from 'lodash/isNumber';
-import isEmpty from 'lodash/isEmpty';
 import checkMinMax from '../helpers/checkMinMax';
 import getCurrency from '../helpers/getCurrency';
+import getLocale from '../helpers/getLocale';
+import isNumber from '../helpers/isNumber';
+import toNumber from '../helpers/toNumber';
 import formatPercentage from './formatPercentage';
 import formatCurrency from './formatCurrency';
 import formatNumber from './formatNumber';
-import getLocale from 'get-user-locale';
-import numeral from 'numeral';
 
 /*
   Format a given number value by locale, to either a number, percent, or currency
@@ -24,33 +23,32 @@ import numeral from 'numeral';
 */
 export default function formatValue(value, type, locale, currency, min, max, minNumberOfDecimals, maxNumberOfDecimals) {
   if (!isNumber(value)) {
-    value = numeral(value).value();
-  }
-  if (isNumber(value)) {
-      let newMinDecimals = (minNumberOfDecimals < 0) ? 0 : minNumberOfDecimals;
-      let newMaxDecimals = (maxNumberOfDecimals > 20) ? 20 : maxNumberOfDecimals;
-      const newValue = checkMinMax(value, min, max);
+    value = toNumber(value);
+  } else {
+    let newMinDecimals = (minNumberOfDecimals < 0) ? 0 : minNumberOfDecimals;
+    let newMaxDecimals = (maxNumberOfDecimals > 20) ? 20 : maxNumberOfDecimals;
+    const newValue = checkMinMax(value, min, max);
 
-      let newLocale = locale;
-      if (isEmpty(locale)) {
-        newLocale = getLocale();
+    let newLocale = locale;
+    if (!locale || locale == null || locale === undefined) {
+      newLocale = getLocale();
+    }
+    newLocale = newLocale.replace('_', '-'); // just in case
+
+    if (type === 'percent') {
+      return formatPercentage(newValue, newLocale, newMinDecimals, newMaxDecimals);
+    }
+
+    if (type === 'currency') {
+      let newCurrency = currency;
+      if (!currency || locale == null || locale === undefined) {
+          newCurrency = getCurrency(newLocale);
       }
-      newLocale = newLocale.replace('_', '-'); // just in case
 
-      if (type === 'percent') {
-        return formatPercentage(newValue, newLocale, newMinDecimals, newMaxDecimals);
-      }
+      return formatCurrency(newValue, newLocale, newCurrency, newMinDecimals, newMaxDecimals);
+    }
 
-      if (type === 'currency') {
-        let newCurrency = currency;
-        if (isEmpty(currency)) {
-            newCurrency = getCurrency(newLocale);
-        }
-
-        return formatCurrency(newValue, newLocale, newCurrency, newMinDecimals, newMaxDecimals);
-      }
-      
-      return formatNumber(newValue, newLocale, newMinDecimals, newMaxDecimals);
+    return formatNumber(newValue, newLocale, newMinDecimals, newMaxDecimals);
   }
 
   return '';
