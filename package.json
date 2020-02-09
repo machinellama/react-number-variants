@@ -1,6 +1,6 @@
 {
   "name": "react-number-variants",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A multi-purpose React number component with variants for numbers, currencies, and percentages",
   "main": "build/index.js",
   "repository": {
@@ -11,6 +11,9 @@
     "react": "^16.x",
     "react-dom": "^16.x"
   },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack"
