@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import toNumber from './util/helpers/toNumber';
 import formatValue from './util/format/formatValue';
 import unformatLocaleNumber from './util/helpers/unformatNumber';
+import isNumber from './util/helpers/isNumber';
 
 function format(value, props) {
   return formatValue(
@@ -21,6 +22,7 @@ function Number(props) {
   const [formattedValue, setFormattedValue] = useState(format(props.value, props));
   const [value, setValue] = useState(toNumber(props.value));
   const [focused, setFocused] = useState(false);
+  const [lastValidValue, setLastValidValue] = useState(value);
 
   function onFocus() {
     setFocused(true);
@@ -29,6 +31,10 @@ function Number(props) {
   function onChange(e) {
     setValue(e.target.value);
 
+    if (isNumber(e.target.value)) {
+      setLastValidValue(e.target.value);
+    }
+
     if (props.emitOnChange && props.onEvent) {
       const numberValue = toNumber(e.target.value);
       props.onEvent('change', numberValue ? numberValue : value);
@@ -36,7 +42,7 @@ function Number(props) {
   }
 
   function onBlur() {
-    const formatted = format(value, props);
+    const formatted = format(isNumber(value) ? value : lastValidValue, props);
     const unformatted = unformatLocaleNumber(formatted, props.locale) || null;
 
     setFocused(false);
