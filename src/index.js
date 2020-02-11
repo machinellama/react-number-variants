@@ -38,7 +38,7 @@ function Number(props) {
 
     if (props.emitOnChange && props.onEvent) {
       const numberValue = toNumber(changeValue);
-      props.onEvent('change', numberValue ? numberValue : value);
+      props.onEvent('change', numberValue);
     }
   }
 
