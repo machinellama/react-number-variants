@@ -1,5 +1,5 @@
 export default function(value) {
-  if (value == null || value === undefined) {
+  if (value == null || value === undefined || value === '') {
     return null;
   }
 

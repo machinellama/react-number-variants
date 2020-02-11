@@ -11,12 +11,12 @@ import currencyMap from './currency-map';
 */
 function getCountryCode(localeString) {
   let components = localeString.split("_");
-  if (components.length == 2) {
+  if (components.length === 2) {
     return components.pop();
   }
 
   components = localeString.split("-");
-  if (components.length == 2) {
+  if (components.length === 2) {
     return components.pop();
   }
 
