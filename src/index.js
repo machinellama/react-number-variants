@@ -29,14 +29,15 @@ function Number(props) {
   }
 
   function onChange(e) {
-    setValue(e.target.value);
+    const changeValue = e.target.value;
+    setValue(changeValue);
 
-    if (isNumber(e.target.value)) {
-      setLastValidValue(e.target.value);
+    if (isNumber(changeValue) || !changeValue) {
+      setLastValidValue(changeValue);
     }
 
     if (props.emitOnChange && props.onEvent) {
-      const numberValue = toNumber(e.target.value);
+      const numberValue = toNumber(changeValue);
       props.onEvent('change', numberValue ? numberValue : value);
     }
   }
