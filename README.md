@@ -64,6 +64,6 @@ Absolutely none; feel free to clone and use any part of this code anywhere you w
 |**errorLocation**|Location of the error message. Can be either 'top' or 'bottom', relative to the input box|string|'bottom'
 |**errorMessage**|The error message displayed|string|'error'
 |**emitOnChange**|Determines whether to emit an event message on-change (can be used for performance or validation purposes)|boolean|true
-|**emitOnBlur**|Determines whether to emit an event message on-blue|boolean|true
+|**emitOnBlur**|Determines whether to emit an event message on-blur|boolean|true
 |**onEvent**|Function that can be used to get the event name and value from the input. Can be used to drive external events in your React component (like with validation to show the error message)|function|null
 |**disabled**|Disable input|boolean|false
