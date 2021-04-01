@@ -36,7 +36,7 @@ function Number(props) {
       setLastValidValue(changeValue);
     }
 
-    if (props.emitOnChange && props.onEvent) {
+    if (props.emitOnChange && props.onEvent && !props.disabled) {
       const numberValue = toNumber(changeValue);
       props.onEvent('change', numberValue);
     }
@@ -50,7 +50,7 @@ function Number(props) {
     setValue(unformatted);
     setFormattedValue(formatted);
 
-    if (props.onEvent) {
+    if (props.emitOnBlur && props.onEvent && !props.disabled) {
       props.onEvent('blur', toNumber(unformatted));
     }
   }
@@ -63,15 +63,29 @@ function Number(props) {
         </div>
       )}
 
-      <input
-        id={props.inputId}
-        className={props.inputClassName}
-        type="text"
-        onFocus={onFocus}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={focused ? value : formattedValue}
-      />
+      {props.disabled ?
+        <input
+          id={props.inputId}
+          className={props.inputClassName}
+          type="text"
+          onFocus={null}
+          onChange={null}
+          onBlur={null}
+          value={formattedValue}
+          disabled
+        />
+      :
+        <input
+          id={props.inputId}
+          className={props.inputClassName}
+          type="text"
+          onFocus={onFocus}
+          onChange={onChange}
+          onBlur={onBlur}
+          value={focused ? value : formattedValue}
+        />
+      }
+
 
       {(props.showError && props.errorLocation === 'bottom') && (
         <div id={props.errorId} className={props.errorClassName}>
@@ -101,7 +115,9 @@ Number.defaultProps = {
   errorLocation: 'bottom',
   errorMessage: 'error',
   emitOnChange: true,
-  onEvent: null
+  emitOnBlur: true,
+  onEvent: null,
+  disabled: false
 }
 
 export default Number;
