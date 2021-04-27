@@ -44,7 +44,7 @@ function Number(props) {
 
   function onBlur() {
     const formatted = format(isNumber(value) ? value : lastValidValue, props);
-    const unformatted = unformatLocaleNumber(formatted, props.locale) || null;
+    const unformatted = unformatLocaleNumber(formatted, props.locale);
 
     setFocused(false);
     setValue(unformatted);
@@ -101,12 +101,12 @@ Number.defaultProps = {
   inputId: 'number-input',
   className: 'number-container',
   inputClassName: 'number-input',
-  value: null,
+  value: undefined,
   type: 'number',
   locale: 'en-US',
   currency: 'USD',
-  min: null,
-  max: null,
+  min: undefined,
+  max: undefined,
   minNumberOfDecimals: 0,
   maxNumberOfDecimals: 20,
   showError: false,

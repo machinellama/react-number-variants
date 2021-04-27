@@ -10,7 +10,7 @@ import getLocale from './getLocale';
 */
 export default function unformatLocaleNumber(stringNumber, locale) {
   let newLocale = locale;
-  if (!locale || locale == null || locale === undefined) {
+  if (!locale || locale == null) {
     newLocale = getLocale();
   }
   newLocale = newLocale.replace('_', '-'); // just in case
@@ -30,6 +30,10 @@ export default function unformatLocaleNumber(stringNumber, locale) {
     .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
     .replace(new RegExp(`\\${decimalSeparator}`), '.'),
   );
+
+  if (isNaN(parsed)) {
+    return undefined;
+  }
 
   return parsed;
 }

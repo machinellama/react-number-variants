@@ -1,12 +1,12 @@
 export default function(value) {
-  if (value == null || value === undefined || value === '') {
-    return null;
+  if (value == null || value === '') {
+    return undefined;
   }
 
   const number = Number(value);
   const returnValue =
-    (isNaN(number) || number == null || number === undefined) ?
-    null : number;
+    (isNaN(number) || number == null) ?
+    undefined : number;
 
   return returnValue;
 }

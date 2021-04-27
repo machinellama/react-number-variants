@@ -30,7 +30,7 @@ export default function formatValue(value, type, locale, currency, min, max, min
     const newValue = checkMinMax(value, min, max);
 
     let newLocale = locale;
-    if (!locale || locale == null || locale === undefined) {
+    if (!locale || locale == null) {
       newLocale = getLocale();
     }
     newLocale = newLocale.replace('_', '-'); // just in case
@@ -41,7 +41,7 @@ export default function formatValue(value, type, locale, currency, min, max, min
 
     if (type === 'currency') {
       let newCurrency = currency;
-      if (!currency || locale == null || locale === undefined) {
+      if (!currency || locale == null) {
           newCurrency = getCurrency(newLocale);
       }
 
