@@ -1,6 +1,6 @@
 {
   "name": "react-number-variants",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A multi-purpose React number component with variants for numbers, currencies, and percentages",
   "main": "build/index.js",
   "repository": {
@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "publish": "npm version patch --force && npm run build && npm publish"
   },
   "author": {
     "name": "Machinellama"
