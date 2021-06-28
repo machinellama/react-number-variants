@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import formatValue from './util/format/formatValue';
 import isNumber from './util/helpers/isNumber';
@@ -23,6 +23,11 @@ function Number(props) {
   const [value, setValue] = useState(toNumber(props.value));
   const [focused, setFocused] = useState(false);
   const [lastValidValue, setLastValidValue] = useState(value);
+
+  useEffect(() => {
+    setFormattedValue(format(props.value, props));
+    setValue(toNumber(props.value));
+  }, [props, props.value]);
 
   function onFocus() {
     setFocused(true);
