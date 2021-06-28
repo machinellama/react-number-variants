@@ -1,6 +1,6 @@
 {
   "name": "react-number-variants",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "A multi-purpose React number component with variants for numbers, currencies, and percentages",
   "main": "build/index.js",
   "repository": {
