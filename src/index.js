@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import toNumber from './util/helpers/toNumber';
 import formatValue from './util/format/formatValue';
-import unformatLocaleNumber from './util/helpers/unformatNumber';
 import isNumber from './util/helpers/isNumber';
+import toNumber from './util/helpers/toNumber';
+import unformatLocaleNumber from './util/helpers/unformatNumber';
 
 function format(value, props) {
   return formatValue(
@@ -65,23 +65,25 @@ function Number(props) {
 
       {props.disabled ?
         <input
-          id={props.inputId}
           className={props.inputClassName}
-          type="text"
-          onFocus={null}
-          onChange={null}
-          onBlur={null}
-          value={formattedValue}
           disabled
+          id={props.inputId}
+          onBlur={null}
+          onChange={null}
+          onFocus={null}
+          placeholder={props.placeholder}
+          type="text"
+          value={formattedValue}
         />
       :
         <input
-          id={props.inputId}
           className={props.inputClassName}
-          type="text"
-          onFocus={onFocus}
-          onChange={onChange}
+          id={props.inputId}
           onBlur={onBlur}
+          onChange={onChange}
+          onFocus={onFocus}
+          placeholder={props.placeholder}
+          type="text"
           value={focused ? value : formattedValue}
         />
       }
@@ -97,27 +99,28 @@ function Number(props) {
 };
 
 Number.defaultProps = {
-  id: 'react-number-variants',
-  inputId: 'number-input',
   className: 'number-container',
-  inputClassName: 'number-input',
-  value: undefined,
-  type: 'number',
-  locale: 'en-US',
   currency: 'USD',
-  min: undefined,
-  max: undefined,
-  minNumberOfDecimals: 0,
-  maxNumberOfDecimals: 20,
-  showError: false,
-  errorId: 'error-message',
+  disabled: false,
+  emitOnBlur: true,
+  emitOnChange: true,
   errorClassName: 'error-message',
+  errorId: 'error-message',
   errorLocation: 'bottom',
   errorMessage: 'error',
-  emitOnChange: true,
-  emitOnBlur: true,
+  id: 'react-number-variants',
+  inputClassName: 'number-input',
+  inputId: 'number-input',
+  locale: 'en-US',
+  max: undefined,
+  maxNumberOfDecimals: 20,
+  min: undefined,
+  minNumberOfDecimals: 0,
   onEvent: null,
-  disabled: false
+  placeholder: undefined,
+  showError: false,
+  type: 'number',
+  value: undefined
 }
 
 export default Number;
