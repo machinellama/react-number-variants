@@ -24,6 +24,8 @@ https://www.npmjs.com/package/react-number-variants
 ## Usage
 
     npm install react-number-variants --save
+    or
+    yarn add react-number-variants
 
 In your React component:
 
