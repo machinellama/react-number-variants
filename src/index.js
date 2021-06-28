@@ -27,7 +27,7 @@ function Number(props) {
   useEffect(() => {
     setFormattedValue(format(props.value, props));
     setValue(toNumber(props.value));
-  }, [props, props.value]);
+  }, [props.value]);
 
   function onFocus() {
     setFocused(true);
