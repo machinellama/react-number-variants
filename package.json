@@ -8,8 +8,8 @@
     "url": "https://github.com/MachineLlama/react-number-variants"
   },
   "peerDependencies": {
-    "react": "^16.x",
-    "react-dom": "^16.x"
+    "react": "x",
+    "react-dom": "x"
   },
   "files": [
     "build"
