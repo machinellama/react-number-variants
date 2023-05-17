@@ -1,3 +1,4 @@
+# This repo is deprecated and will no longer be updated
 
 A multi-purpose React number component with variants for numbers, currencies, and percentages
 
