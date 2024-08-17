@@ -13,7 +13,7 @@ Features include:
 
 
 ## Live demo with examples
-https://react-number-variants.netlify.com/
+[https://react-number-variants.netlify.app](https://react-number-variants.netlify.app)
 
 ## GitHub
 https://github.com/MachineLlama/react-number-variants
